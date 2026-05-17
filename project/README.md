@@ -27,26 +27,11 @@ short_description: "An advanced CrewAI multi-agent orchestrator utilizing Llama 
 
 Unlike standard static Large Language Models (LLMs) constrained by training knowledge cutoff dates, this system implements an autonomous execution pipeline. The orchestrator separates concerns into specialized nodes that collaborate via an asymmetric task-execution graph.
 
-┌────────────────────────────────────────┐
-              │          User Prompt/Input             │
-              │   (e.g., "Paris 2024 Analysis")        │
-              └───────────────────┬────────────────────┘
-                                  │
-                                  ▼
-              ┌────────────────────────────────────────┐
-              │      src/ai_olympics_agent/main.py     │
-              │   (Initializes Inputs & Triggers Crew) │
-              └───────────────────┬────────────────────┘
-                                  │
-                                  ▼
-              ┌────────────────────────────────────────┐
-              │      src/ai_olympics_agent/crew.py     │
-              │  (Orchestrates Agents, Tasks & Tools)  │
-              └───────────────────┬────────────────────┘
-                                  │
-       ┌──────────────────────────┴──────────────────────────┐
-       ▼                                                     ▼
-
+```
+                  ┌────────────────────────────────────────┐
+                  │          User Prompt/Input             │
+                  ...
+```
        ┌─────────────────────────────────────┐               ┌─────────────────────────────────────┐
 │    🔍 OLYMPICS RESEARCHER AGENT     │               │     ✍️ SPORTS CONTENT WRITER AGENT   │
 ├─────────────────────────────────────┤               ├─────────────────────────────────────┤
